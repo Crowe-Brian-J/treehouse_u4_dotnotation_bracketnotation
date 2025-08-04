@@ -23,6 +23,19 @@ class Pet {
     }
   }
 
+  //add a getter funciton before the setter function to more easily access data
+  get owner() {
+    return this._owner
+  }
+
+  //add owner - setter method
+  set owner(owner) {
+    //backing property - name can never be the same as a getter or setter method
+    //add underscore before name of setter function to cirucmvent this
+    this._owner = owner
+    console.log(`setter called: ${owner}`)
+  }
+
   //Pet method for speak - outside of constructor
   speak() {
     console.log(this.sound)
@@ -38,3 +51,13 @@ vera.speak()
 
 //do not access getter method like speak method - also will not work with console.log(ernie)
 console.log(ernie.activity)
+
+//to set owner's name:
+ernie.owner = 'Ashley'
+
+//to access setter function method:
+//NOT: console.log(ernie.owner)
+//The following would work
+//console.log(ernie._owner)
+//but before setter function, add getter function
+console.log(ernie.owner)
