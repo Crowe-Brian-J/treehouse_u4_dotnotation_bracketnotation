@@ -27,6 +27,7 @@ ernie.color = 'black'
 console.log(ernie)
 */
 
+//Move to prototypes/classes
 const ernie = {
   animal: 'dog',
   age: '1',
