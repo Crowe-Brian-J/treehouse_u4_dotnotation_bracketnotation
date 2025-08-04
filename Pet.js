@@ -8,3 +8,9 @@ class Pet {
     this.breed = breed
   }
 }
+
+//create an instance of a class
+const ernie = new Pet('dog', 1, 'Pug')
+const vera = new Pet('dog', 8, 'Border Collie')
+
+console.log(ernie)
