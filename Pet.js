@@ -42,6 +42,26 @@ class Pet {
   }
 }
 
+//create Owner class
+class Owner {
+  constructor(name, address) {
+    this.name = name
+    this.address = address
+  }
+
+  //then create getter method
+  get phone() {
+    return this._phone
+  }
+
+  //setter method for phone
+  set phone(phone) {
+    //because string
+    const phoneNormalized = phone.replace(/[^0-9]/g, '')
+    this._phone = phoneNormalized
+  }
+}
+
 //create an instance of a class
 const ernie = new Pet('Ernie', 'dog', 1, 'Pug', 'Yip! Yip!')
 const vera = new Pet('Vera', 'dog', 8, 'Border Collie', 'Woof! Woof!')
@@ -53,11 +73,17 @@ vera.speak()
 console.log(ernie.activity)
 
 //to set owner's name:
-ernie.owner = 'Ashley'
+//ernie.owner = 'Ashley'
+
+//now create Ashley as owner via constructor
+ernie.owner = new Owner('Ashley', '123 Main Street')
+//then set phone number
+ernie.owner.phone = '(555) 555-5555'
 
 //to access setter function method:
 //NOT: console.log(ernie.owner)
 //The following would work
 //console.log(ernie._owner)
 //but before setter function, add getter function
-console.log(ernie.owner)
+console.log(ernie.owner.name)
+console.log(ernie.owner.phone)
